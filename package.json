@@ -63,7 +63,8 @@
             "target": [
                 "tar.gz",
                 "deb",
-                "rpm"
+                "rpm",
+                "snap"
             ]
         },
         "win": {
@@ -73,6 +74,51 @@
             ],
             "files": [
                 "bin/x86/**/*"
+            ]
+        },
+        "snap": {
+            "grade": "stable",
+            "confinement": "classic",
+            "buildPackages": [
+                "libx11-dev",
+                "libxkbfile-dev"
+            ],
+            "stagePackages": [
+                "libasound2",
+                "libgconf2-4",
+                "libnotify4",
+                "libnspr4",
+                "libnss3",
+                "libpcre3",
+                "libpulse0",
+                "libxss1",
+                "libxtst6",
+                "libxkbcommon0",
+                "libgtk-3-0",
+                "libcanberra-gtk3-module"
+            ],
+            "after": [
+                "desktop-gtk3"
+            ],
+            "plugs": [
+                "desktop",
+                "unity7",
+                "x11",
+                "avahi-observe",
+                "browser-support",
+                "cups-control",
+                "gsettings",
+                "home",
+                "desktop",
+                "mount-observe",
+                "network",
+                "network-bind",
+                "network-observe",
+                "password-manager-service",
+                "pulseaudio",
+                "removable-media",
+                "screen-inhibit-control",
+                "unity7"
             ]
         },
         "fileAssociations": [
